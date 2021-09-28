@@ -1,29 +1,30 @@
 <p id="notice"><%= notice %></p>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <br/>
+      <td><strong>Currency:</strong></td>
+      <td><%= @order.currency %></td>
+    </tr>
+    <tr>
+      <td><strong>Name:</strong></td>
+      <td><%= @order.name %></td>
+    </tr>
+    <tr>
+      <td><strong>Price:</strong></td>
+      <td><%= @order.price %></td>
+    </tr>
+    <tr>
+      <td><strong>Sale:</strong></td>
+      <td><%= @order.sale %></td>
+    </tr>
+    <tr>
+      <td><strong>Category:</strong></td>
+      <td><%= @order.category %></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Currency:</strong>
-  <%= @order.currency %>
-</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @order.name %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @order.price %>
-</p>
-
-<p>
-  <strong>Sale:</strong>
-  <%= @order.sale %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @order.category %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to "<button type='button' class='btn btn-warning'>Edit</button>".html_safe, edit_order_path(@order) %>
+<%= link_to "<button type='button' class='btn btn-secondary'>Back</button>".html_safe, orders_path %>
