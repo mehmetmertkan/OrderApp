@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+
+<h1>Order Page</h1>
+
 <table class="table table-striped">
   <tbody>
     <tr>
@@ -26,5 +29,5 @@
 </table>
 
 
-<%= link_to "<button type='button' class='btn btn-warning'>Edit</button>".html_safe, edit_order_path(@order) %>
-<%= link_to "<button type='button' class='btn btn-secondary'>Back</button>".html_safe, orders_path %>
+<%= link_to 'Edit', edit_order_path(@order), class:"btn btn-warning" %> |
+<%= link_to 'Back', orders_path, class:"btn btn-primary" %>
