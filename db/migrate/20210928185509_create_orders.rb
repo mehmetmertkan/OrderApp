@@ -5,7 +5,6 @@ class CreateOrders < ActiveRecord::Migration[6.1]
       t.string :name
       t.float :price
       t.float :sale
-      t.string :category
 
       t.timestamps
     end
