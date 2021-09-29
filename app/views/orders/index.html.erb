@@ -19,7 +19,7 @@
         <td><%= order.name %></td>
         <td><%= order.price %></td>
         <td><%= order.sale %></td>
-        <td><%= order.category_id %></td>
+        <td><%= order.category.category %></td>
         <td><%= link_to 'Show', order, class:"btn btn-primary" %></td>
         <td><%= link_to 'Edit', edit_order_path(order), class:"btn btn-warning" %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
