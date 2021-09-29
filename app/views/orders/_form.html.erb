@@ -6,23 +6,24 @@
       <ul>
         <% order.errors.each do |error| %>
           <li><%= error.full_message %></li>
-        <% end %>
+        <% end %> 
       </ul>
     </div>
   <% end %>
   <br/>
   <div class="field form-group">
-    <%= form.text_field :currency, class:"form-control", placeholder:"Currency" %>
+   
+    <%= form.select :currency, Order::CURRENCY_TYPES.map { |s| [s] } %>
   </div>
   <br/>
 
   <div class="field form-group">
-    <%= form.text_field :name, class:"form-control", placeholder:"Name" %>
+    <%= form.text_field :name, class:"form-control", placeholder:"Name"%>
   </div>
   <br/>
 
   <div class="field form-group">
-    <%= form.text_field :price, class:"form-control", placeholder:"Price" %>
+    <%= form.text_field :price, class:"form-control", placeholder:"Price", :value=>"15"  %>
   </div>
   <br/>
 
@@ -32,7 +33,7 @@
   <br/>
 
   <div class="field form-group">
-    <%= form.select :category_id, Category.all.map{|c| [c.category, c.id]}, class:"form-control", placeholder:"Category" %>
+    <%= form.select :category_id, Category.all.map{|c| [c.category, c.id]} %>
   </div>
   <br/>
 
