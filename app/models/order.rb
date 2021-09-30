@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-    belongs_to :category
+    belongs_to :category, optional: true
     validates :name, :presence => true
     validate :nameWordCountMoreThanOne
     validates :price, :presence => true
@@ -11,6 +11,8 @@ class Order < ApplicationRecord
   end
 
   def isSaleMoreThanPrice
-    errors[:comment] << "Sale can't be more than price" if price < sale
+    unless sale.nil? || sale == 0
+      errors[:comment] << "Sale can't be more than price" if price < sale
+    end
   end
 end

@@ -18,12 +18,12 @@
   <br/>
 
   <div class="field form-group">
-    <%= form.text_field :name, class:"form-control", placeholder:"Name"%>
+    <%= form.text_field :name, class:"form-control", placeholder:"Name", :value=>"asd asd" %>
   </div>
   <br/>
 
   <div class="field form-group">
-    <%= form.text_field :price, class:"form-control", placeholder:"Price", :value=>"15"  %>
+    <%= form.text_field :price, class:"form-control", placeholder:"Price", :value=>"15" %>
   </div>
   <br/>
 
@@ -33,7 +33,9 @@
   <br/>
 
   <div class="field form-group">
-    <%= form.select :category_id, Category.all.map{|c| [c.category, c.id]} %>
+    <!--<%a = Array.new(1,"def") %>-->
+    <%b = Category.all.map{|c| [c.category, c.id]} %>
+    <%= form.select :category_id, b%>
   </div>
   <br/>
 
